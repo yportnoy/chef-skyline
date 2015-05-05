@@ -3,7 +3,7 @@ include_recipe 'git'
 
 git node['skyline']['install_dir'] do
   repository node['skyline']['source']['repo']
-  reference node['skyline']['source']['reference']
+  reference node['skyline']['source']['commit_hash'] || node['skyline']['source']['reference']
   action :sync
 end
 
